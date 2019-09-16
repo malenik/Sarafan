@@ -1,0 +1,15 @@
+https://www.youtube.com/watch?v=mGfiV9WDd6Y&list=PLU2ftbIeotGqSTOVNjT4L3Yfy8jatCdhm&index=4
+
+https://www.youtube.com/watch?v=QmsMWCIf3nc
+
+https://github.com/drucoder/sarafan/blob/VueApp/src/main/resources/static/js/main.js
+
+https://ru.vuejs.org/v2/guide/index.html
+
+https://github.com/pagekit/vue-resource
+
+http://learn.javascript.ru/promise
+
+https://caniuse.com/#feat=arrow-functions
+
+https://www.youtube.com/watch?v=qw--VYLpxG4
