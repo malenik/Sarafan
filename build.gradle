@@ -31,6 +31,7 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-websocket")
 	compile('org.postgresql:postgresql')
 	compile('org.projectlombok:lombok')
+	compile 'org.jsoup:jsoup:1.12.1'
 	compile('javax.xml.bind:jaxb-api')
 	compile('com.sun.xml.bind:jaxb-core')
 	compile('com.sun.xml.bind:jaxb-impl')

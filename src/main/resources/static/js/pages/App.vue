@@ -2,8 +2,19 @@
     <v-app>
         <v-app-bar app>
             <v-toolbar-title>Sarafan</v-toolbar-title>
+            <v-btn
+                   v-if="profile"
+                   :disabled="$route.path === '/'"
+                   @click="showMessages">
+                Messages
+            </v-btn>
             <v-spacer></v-spacer>
-            <span v-if="profile">{{profile.name}}</span>
+            <v-btn
+                   v-if="profile"
+                   :disabled="$route.path === '/profile'"
+                   @click="showProfile">
+                {{profile.name}}
+            </v-btn>
             <v-btn v-if="profile" icon href="/logout">
                 <v-icon>{{logout}}</v-icon>
             </v-btn>
@@ -37,7 +48,15 @@
             }
         },
         computed: mapState(['profile']),
-        methods: mapMutations(['addMessageMutation', 'updateMessageMutation', 'removeMessageMutation']),
+        methods: {
+            ...mapMutations(['addMessageMutation', 'updateMessageMutation', 'removeMessageMutation']),
+        showMessages(){
+            this.$router.push('/')
+        },
+        showProfile() {
+            this.$router.push('/profile')
+            }
+        },
         created() {
             addHandler(data => {
                 if (data.objectType === 'MESSAGE') {
@@ -58,6 +77,11 @@
                     console.error(`Looks like the object type if unknown "${data.objectType}"`)
                 }
             })
+        },
+        beforeMount() {
+            if (!this.profile) {
+                this.$router.replace('/auth')
+            }
         }
     }
 </script>
